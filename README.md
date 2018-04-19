@@ -1,1 +1,3 @@
-# dream
+
+
+SpringMVC+Mybatis+Mysql+Redis+logback+Maven项目，不断完善以及尝试...
