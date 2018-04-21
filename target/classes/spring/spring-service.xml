@@ -33,6 +33,7 @@
 
     <!--将不同的用途的东西分开更清楚-->
     <context:component-scan base-package="com.mc.aop;com.mc.annotation"/>
+    <!--true基本就是Cglib代理  否则就是jdk代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 </beans>

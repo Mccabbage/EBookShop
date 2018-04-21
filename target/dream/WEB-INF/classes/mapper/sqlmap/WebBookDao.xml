@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mc.dao.WebBookDao">
+
+    <select id="getWebBookList" resultType="WebBook">
+        select Id,name,replace_str,show_url,state,create_time,update_time from webBook
+    </select>
+
+    <insert id="addWebBook">
+        insert webBook(name,replace_str,show_url,state,create_time,update_time)
+        VALUE (#{webBook.name},#{webBook.replaceStr},#{webBook.showUrl},#{webBook.state},#{webBook.createTime},#{webBook.updateTime})
+    </insert>
+
+    <update id="updateWebBook">
+        update webBook
+        set Id = Id
+        <if test="webBook.name!=null and webBook.name!=''">
+          ,name=#{webBook.name}
+        </if>
+        <if test="webBook.replaceStr!=null and webBook.replaceStr!=''">
+          ,replace_str=#{webBook.replaceStr}
+        </if>
+        <if test="webBook.showUrl!=null and webBook.showUrl!=''">
+          ,show_url=#{webBook.showUrl}
+        </if>
+        <if test="webBook.state!=0">
+          ,state=#{webBook.state}
+        </if>
+        <if test="webBook.createTime!=null and webBook.createTime!=''">
+          ,create_time=#{webBook.createTime}
+        </if>
+        <if test="webBook.updateTime!=null and webBook.updateTime!=''">
+          ,update_time=#{webBook.updateTime}
+        </if>
+        where Id = #{webBook.Id}
+    </update>
+</mapper>

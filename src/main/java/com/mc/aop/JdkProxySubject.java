@@ -14,6 +14,7 @@ import java.lang.reflect.Method;
 public class JdkProxySubject implements InvocationHandler {
     private ReallySubject reallySubject;
 
+    @Autowired
     public JdkProxySubject(ReallySubject reallySubject) {
         this.reallySubject = reallySubject;
     }
