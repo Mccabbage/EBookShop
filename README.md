@@ -1,3 +1,2 @@
 
-
-SpringMVC+Mybatis+Mysql+Redis+logback+Maven项目，不断完善以及尝试...
+目前是作为从线上拉取电子书用的,从笔趣网拉取一本书，生成txt文件
